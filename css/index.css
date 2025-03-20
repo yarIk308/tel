@@ -1,0 +1,134 @@
+.search {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #00796B;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search button {
+    background: #00796B;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search button:hover {
+    background: #004D40;
+}
+
+.slider {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.slider h2 {
+    color: #00796B;
+    font-size: 24px;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.slide {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    min-width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.slide:hover {
+    transform: scale(1.05);
+}
+
+.slide img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.slide p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.slide button {
+    background: #00796B;
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slide button:hover {
+    background: #004D40;
+}
+
+.auth-section {
+    width: 320px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.auth-section h2 {
+    color: #00796B;
+}
+
+.auth-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #00796B;
+    border-radius: 5px;
+}
+
+.contacts {
+    text-align: center;
+    padding: 20px;
+    background: #f5f5f5;
+}
+.welcome {
+    font-size: 18px;
+    color: #00796B;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+button[type="submit"] {
+    background-color: #1abc9c; /* Бирюзовый цвет */
+    color: white; /* Белый цвет текста */
+    border: none; /* Убираем границу */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор при наведении */
+    border-radius: 5px; /* Закругленные углы */
+    transition: background-color 0.3s ease; /* Плавный переход для фона */
+}
+
+button[type="submit"]:hover {
+    background-color: #16a085; /* Темнее бирюзовый при наведении */
+}

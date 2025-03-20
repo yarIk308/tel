@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - PhoneStore</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <script src="js/register.js" defer></script>
+
+</head>
+
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="PhoneStore"></a>
+        </div>
+        <nav>
+            <ul>
+                <li id="register-btn"><a href="registration.html">Регистрация</a></li>
+                <li id="login-btn"><a href="index.html#auth-section">Авторизация</a></li>
+                <li><a href="account.html">Личный кабинет</a></li>
+                <li><a href="products.html">Товары</a></li>
+                <li><a href="set_of_products.html">Корзина</a></li>
+                <li><a href="zakaz.html">Заказы</a></li>
+                <li><a href="index.html#about">О нас</a></li>
+                <li><a href="index.html#contacts">Контакты</a></li>
+    
+                <li id="user-info" style="display: none;">
+                    <span id="username"></span>
+                    <a href="#" onclick="logout()">Выйти</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+
+    <section class="registration">
+        <h2>Регистрация</h2>
+        <form id="register-form">
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <label>Имя:</label>
+            <input type="text" name="name" required>
+
+            <label>Фамилия:</label>
+            <input type="text" name="surname" required>
+
+            <label>Возраст:</label>
+            <input type="number" name="age" required>
+
+            <label>Пол:</label>
+            <select name="gender">
+                <option value="Мужской">Мужской</option>
+                <option value="Женский">Женский</option>
+            </select>
+
+            <label>Пароль:</label>
+            <input type="password" name="password" required>
+
+            <label>Повторите пароль:</label>
+            <input type="password" name="confirm_password" required>
+
+            <label>
+                <input type="checkbox" name="agree" required> Согласен на обработку данных
+            </label>
+
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <p id="register-error" style="color: red; display: none;"></p>
+   
+
+
+        <p>Уже есть аккаунт? <a href="auth.html">Войти</a></p>
+    </section>
+
+    <footer>
+        <p>© 2025 PhoneStore. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>

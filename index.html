@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhoneStore – Главная</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        button[type="submit"] {
+    background-color: #1abc9c; /* Бирюзовый цвет */
+    color: white; /* Белый цвет текста */
+    border: none; /* Убираем границу */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор при наведении */
+    border-radius: 5px; /* Закругленные углы */
+    transition: background-color 0.3s ease; /* Плавный переход для фона */
+}
+
+button[type="submit"]:hover {
+    background-color: #16a085; /* Темнее бирюзовый при наведении */
+}
+
+    </style>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let username = localStorage.getItem("username");
+
+        if (username) {
+            document.getElementById("user-info").style.display = "inline"; 
+            document.getElementById("username").textContent = "Привет, " + username;
+            document.getElementById("login-btn").style.display = "none"; 
+            document.getElementById("register-btn").style.display = "none"; 
+        }
+    });
+
+    
+    function logout() {
+        localStorage.removeItem("username"); 
+        location.reload(); 
+    }
+</script>
+
+
+   
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="PhoneStore"></a>
+        </div>
+        <nav>
+            <ul>
+                <li id="register-btn"><a href="registration.html">Регистрация</a></li>
+                <li id="login-btn"><a href="index.html#auth-section">Авторизация</a></li>
+                <li><a href="account.html">Личный кабинет</a></li>
+                <li><a href="products.html">Товары</a></li>
+                <li><a href="set_of_products.html">Корзина</a></li>
+                <li><a href="zakaz.html">Заказы</a></li>
+                <li><a href="index.html#about">О нас</a></li>
+                <li><a href="index.html#contacts">Контакты</a></li>
+    
+                <li id="user-info" style="display: none;">
+                    <span id="username"></span>
+                    <a href="#" onclick="logout()">Выйти</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+
+    <section id="search" class="search">
+        <input type="text" placeholder="Поиск по каталогу...">
+        <button>🔍</button>
+    </section>
+
+    <section class="slider">
+        <h2>Популярные товары</h2>
+        <div class="slider-container">
+            <div class="slide">
+                <img src="img/iphone15pro.jpg" alt="iPhone 15 Pro">
+                <p>iPhone 15 Pro – 1199.99$</p>
+                <button>Подробнее</button>
+            </div>
+            <div class="slide">
+                <img src="img/galaxys24ultra.jpg" alt="Galaxy S24 Ultra">
+                <p>Galaxy S24 Ultra – 1299.99$</p>
+                <button>Подробнее</button>
+            </div>
+        </div>
+    </section>
+
+
+<section id="auth-section" class="auth-section">
+    <h2>Авторизация</h2>
+    <form id="login-form">
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Пароль:</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Войти</button>
+    </form>
+    <p id="login-error" style="color: red; display: none;"></p>
+</section>
+
+
+<!-- Подключаем JavaScript -->
+<script src="js\js\auth.js"></script>
+
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let username = localStorage.getItem("username");
+
+        if (username) {
+            document.getElementById("auth-section").style.display = "none";
+        }
+    });
+</script>
+
+
+    <section id="about" class="about">
+        <h2>О нас</h2>
+        <p>Мы – интернет-магазин современных смартфонов</p>
+    </section>
+
+    <section id="contacts" class="contacts">
+        <h2>Контакты</h2>
+        <p>Email: support@phonestore.com</p>
+        <p>Телефон: +7 (900) 123-45-67</p>
+        <p>Адрес: Ярославль</p>
+    </section>
+
+    <footer>
+        <p>© 2025 PhoneStore. Все права защищены.</p>
+    </footer>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
