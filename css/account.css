@@ -1,0 +1,147 @@
+.account-container {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.account-container h2 {
+    color: #00796B;
+}
+.logout-btn {
+    background-color: #D32F2F; 
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #C2185B; 
+}
+/* === Фиксируем footer внизу страницы === */
+html, body {
+    height: 100%; /* Делаем страницу на весь экран */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Главный контент растягивается, footer уходит вниз */
+}
+
+footer {
+    background: #009688;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+}
+/* === Центрирование формы === */
+
+
+/* === Стили для формы редактирования профиля === */
+#edit-form {
+    background: white;
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#edit-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#edit-form label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+#edit-form input, 
+#edit-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fafafa;
+    transition: 0.3s;
+}
+
+#edit-form input:focus, 
+#edit-form select:focus {
+    border-color: #009688;
+    background-color: #fff;
+    outline: none;
+}
+
+#edit-form button {
+    background-color: #009688;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+#edit-form button:hover {
+    background-color: #00796B;
+}
+
+#edit-form p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#edit-form p a {
+    color: #009688;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#edit-form p a:hover {
+    text-decoration: underline;
+}
+
+/* === Адаптивность (чтобы на телефонах тоже было красиво) === */
+@media (max-width: 500px) {
+    #edit-form {
+        max-width: 90%;
+    }
+}
+/* === Кнопка "Редактировать профиль" с уникальным классом === */
+.edit-profile-btn {
+    background-color: #009688;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: auto; /* При необходимости можно задать фиксированную ширину */
+    margin-top: 20px;
+}
+
+.edit-profile-btn:hover {
+    background-color: #00796B;
+}
