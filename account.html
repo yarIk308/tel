@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - PhoneStore</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+<body onload="loadUserData()">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let username = localStorage.getItem("username");
+    
+            if (username) {
+                document.getElementById("user-info").style.display = "inline"; 
+                document.getElementById("username").textContent = "Привет, " + username;
+                document.getElementById("login-btn").style.display = "none"; 
+                document.getElementById("register-btn").style.display = "none"; 
+            }
+        });
+    
+        
+        function logout() {
+            localStorage.removeItem("username"); 
+            location.reload(); 
+        }
+    </script>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="PhoneStore"></a>
+        </div>
+        <nav>
+            <ul>
+                <li id="register-btn"><a href="registration.html">Регистрация</a></li>
+                <li id="login-btn"><a href="index.html#auth-section">Авторизация</a></li>
+                <li><a href="account.html">Личный кабинет</a></li>
+                <li><a href="products.html">Товары</a></li>
+                <li><a href="set_of_products.html">Корзина</a></li>
+                <li><a href="zakaz.html">Заказы</a></li>
+                <li><a href="index.html#search">Поиск</a></li>
+                <li><a href="index.html#about">О нас</a></li>
+                <li><a href="index.html#contacts">Контакты</a></li>
+    
+                <li id="user-info" style="display: none;">
+                    <span id="username"></span>
+                    <a href="#" onclick="logout()">Выйти</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="account-container">
+            <div class="account-content">
+            <h2>Личный кабинет</h2>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>Имя:</strong> <span id="user-name"></span></p>
+            <p><strong>Фамилия:</strong> <span id="user-surname"></span></p>
+            <p><strong>Дата рождения:</strong> <span id="user-birthdate"></span></p>
+            <p><strong>Пол:</strong> <span id="user-gender"></span></p>
+
+            <button class="edit-profile-btn" onclick="showEditForm()">Редактировать профиль</button>
+            </div>
+         </div>
+            <!-- Форма редактирования (скрыта по умолчанию) -->
+            
+            <form id="edit-form" style="display: none;">
+                <label>Имя:</label>
+                <input type="text" id="edit-name">
+                
+                <label>Фамилия:</label>
+                <input type="text" id="edit-surname">
+                
+                <label>Дата рождения:</label>
+                <input type="date" id="edit-birthdate">
+                
+                <label>Пол:</label>
+                <select id="edit-gender">
+                    <option value="Мужской">Мужской</option>
+                    <option value="Женский">Женский</option>
+                </select>
+
+                <button type="button" onclick="updateProfile()">Сохранить изменения</button>
+                <button type="button" onclick="hideEditForm()">Отмена</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 PhoneStore. Все права защищены.</p>
+    </footer>
+
+    <!-- Подключаем JavaScript -->
+    <script src="js/auth.js"></script> 
+    <script src="js/account.js"></script>
+
+</body>
+</html>

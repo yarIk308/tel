@@ -1,0 +1,8 @@
+Array
+(
+    [user_id] => 12
+    [name] => qed
+    [surname] => asd
+    [birthdate] => 2003-07-18
+    [gender] => Мужской
+)

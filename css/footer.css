@@ -1,0 +1,25 @@
+footer {
+    background: #AED4CA;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+footer p {
+    text-decoration: none;
+    color: rgb(58, 57, 57);
+    font-weight: bold;
+    transition: 0.3s;
+}
+footer p {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+footer p {
+    display: inline;
+}
+

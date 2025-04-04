@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhoneStore – Главная</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/auth.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/reviews.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="PhoneStore"></a>
+        </div>
+        <nav>
+            <ul>
+                <li id="register-btn"><a href="registration.html">Регистрация</a></li>
+                <li id="login-btn"><a href="index.html#auth-section">Авторизация</a></li>
+                <li><a href="account.html">Личный кабинет</a></li>
+                <li><a href="products.html">Товары</a></li>
+                <li><a href="set_of_products.html">Корзина</a></li>
+                <li><a href="zakaz.html">Заказы</a></li>
+                <li><a href="index.html#search">Поиск</a></li>
+                <li><a href="index.html#about">О нас</a></li>
+                <li><a href="index.html#contacts">Контакты</a></li>
+
+                <li id="user-info" style="display: none;">
+                    <span id="username"></span>
+                    <a href="#" onclick="logout()">Выйти</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Поиск товаров -->
+    <section id="search" class="search">
+        <input type="text" id="search-input" placeholder="Поиск по каталогу...">
+        <button onclick="searchProducts()">🔍 Поиск</button>
+        <div id="search-results"></div>
+    </section>
+
+    <section class="slider">
+        <h2>Популярные товары</h2>
+        <div class="slider-wrapper">
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <div id="popular-products" class="slides-container"></div>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+    
+
+    <!-- Форма авторизации -->
+    <section id="auth-section" class="auth-section">
+        <h2>Авторизация</h2>
+        <form id="login-form">
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            <label>Пароль:</label>
+            <input type="password" name="password" required>
+            <button type="submit">Войти</button>
+            <div class="parol">
+            <p>Забыли пароль?<a href="index.html#auth-section" > Восстановить</a></p>
+            </div>
+        </form>
+        <p id="login-error" style="color: red; display: none;"></p>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let username = localStorage.getItem("username");
+    
+            if (username) {
+                document.getElementById("auth-section").style.display = "none";
+            }
+        });
+    </script>
+
+<section id="about" class="about-section">
+    <h2>О нас</h2>
+
+    <div class="about-block">
+        <img src="img/1.jpg" alt="Магазин смартфонов">
+        <div class="about-text">
+            <h3>Качественные смартфоны по доступным ценам</h3>
+            <p>Мы – интернет-магазин PhoneStore, который предлагает широкий выбор современных смартфонов по лучшим ценам. Мы работаем только с проверенными поставщиками, чтобы гарантировать качество и надежность продукции.</p>
+        </div>
+    </div>
+
+    <div class="about-block reverse">
+        <img src="img/2.jpg" alt="Доставка смартфонов">
+        <div class="about-text">
+            <h3>Быстрая доставка и высокий уровень сервиса</h3>
+            <p>Наши клиенты получают свои заказы максимально быстро. Мы сотрудничаем с ведущими службами доставки, а также предлагаем гарантию на всю продукцию.</p>
+        </div>
+    </div>
+</section>
+<section class="reviews">
+    <h2>Отзывы наших клиентов</h2>
+    <div class="reviews-slider">
+        <div class="review active">
+            <img src="img/avatar.jpg" alt="Клиент 1">
+            <p class="review-text">"Качественные телефоны!"</p>
+            <p class="review-author">Алексей Иванов</p>
+            <p class="review-date">12.03.2025</p>
+            <button class="more-btn" onclick="location.href='products.html?id=1'">Подробнее</button>
+        </div>
+        <div class="review">
+            <img src="img/avatar.jpg" alt="Клиент 2">
+            <p class="review-text">"Быстрая доставка и хорошие цены."</p>
+            <p class="review-author">Марина Смирнова</p>
+            <p class="review-date">15.03.2025</p>
+            <button class="more-btn" onclick="location.href='products.html?id=2'">Подробнее</button>
+        </div>
+        <div class="review">
+            <img src="img/avatar.jpg" alt="Клиент 3">
+            <p class="review-text">"Рекомендую, всё отлично!"</p>
+            <p class="review-author">Игорь Сидоров</p>
+            <p class="review-date">18.03.2025</p>
+            <button class="more-btn" onclick="location.href='products.html?id=3'">Подробнее</button>
+
+        </div>
+    </div>
+</section>
+<section id="contacts" class="contacts">
+    <h2>Контакты</h2>
+    <p>Email: support@phonestore.com</p>
+    <p>Телефон: +7 (900) 123-45-67</p>
+    <p>Адрес: Ярославль</p>
+
+    <div class="social-icons">
+        <a href="https://vk.com" target="_blank"><img src="img/vk.png" alt="VK"></a>
+        <a href="https://t.me" target="_blank"><img src="img/tg.png" alt="Telegram"></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="img/inst.jpg" alt="Instagram"></a>
+        <a href="https://www.youtube.com" target="_blank"><img src="img/yt.png" alt="YouTube"></a>
+    </div>
+</section>
+
+    
+    
+    <footer>
+        <div class="footer"><p>© 2025 PhoneStore. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/search.js" defer></script>
+    <script src="js/get_popular_products.js" defer></script>
+
+</body>
+</html>
+

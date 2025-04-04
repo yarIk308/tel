@@ -1,0 +1,75 @@
+.orders {
+    text-align: center;
+    padding: 20px;
+}
+
+#orders-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.order-item {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+    transition: transform 0.2s;
+}
+
+.order-item:hover {
+    transform: scale(1.02);
+}
+
+.order-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #009688;
+}
+
+.order-item p {
+    font-size: 16px;
+    color: #333;
+}
+/* === Фиксируем footer внизу страницы === */
+html, body {
+    height: 100%; /* Делаем страницу на весь экран */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Главный контент растягивается, footer уходит вниз */
+}
+
+footer {
+    background: #AED4CA;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+}
+footer p {
+    text-decoration: none;
+    color: rgb(58, 57, 57);
+    font-weight: bold;
+    transition: 0.3s;
+}
+footer p {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+footer p {
+    display: inline;
+}
